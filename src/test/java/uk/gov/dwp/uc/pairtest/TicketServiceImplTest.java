@@ -42,7 +42,6 @@ public class TicketServiceImplTest {
 
     @Test
     public void testPurchaseTicketsForHappyPath() throws Exception {
-        when(ticketValidator.validate(anyLong(), any())).thenReturn(List.of());
         int totalPrice = Whitebox.invokeMethod(ticketService, "calculatePrice", getTicketTypeRequests()[0], getTicketTypeRequests()[1],
                 getTicketTypeRequests()[2]);
         int noOfSeatsToBeReserved = Whitebox.invokeMethod(ticketService, "calculateSeatsToBeBooked", getTicketTypeRequests()[0], getTicketTypeRequests()[1],
